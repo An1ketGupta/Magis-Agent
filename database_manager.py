@@ -1,12 +1,33 @@
 import json
+import os
 import sqlite3
 
 import config
 
+# The released repo does not include the database; this schema is reconstructed from the queries below
+# and in visual_web_page/process.py.
+SCHEMA = """
+CREATE TABLE IF NOT EXISTS repository (repo_index INTEGER PRIMARY KEY AUTOINCREMENT, full_name TEXT, path TEXT);
+CREATE TABLE IF NOT EXISTS task (task_index INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT, task_type INTEGER,
+                                 repo_index INTEGER, path TEXT, version TEXT);
+CREATE TABLE IF NOT EXISTS agent_role (role_index INTEGER PRIMARY KEY AUTOINCREMENT, system_prompt TEXT, task_index INTEGER,
+                                       name TEXT, username TEXT, user_path TEXT);
+CREATE TABLE IF NOT EXISTS chat_request (request_index INTEGER PRIMARY KEY AUTOINCREMENT, role_index INTEGER, user_prompt TEXT);
+CREATE TABLE IF NOT EXISTS chat_response (response_index INTEGER PRIMARY KEY AUTOINCREMENT, response_id TEXT, object TEXT,
+                                          created INTEGER, model TEXT, choices TEXT, usage TEXT,
+                                          system_fingerprint TEXT, request_index INTEGER);
+CREATE TABLE IF NOT EXISTS action (action_index INTEGER PRIMARY KEY AUTOINCREMENT, action_content TEXT);
+CREATE TABLE IF NOT EXISTS process (process_index INTEGER PRIMARY KEY AUTOINCREMENT, process_type INTEGER,
+                                    operate_index INTEGER, task_index INTEGER);
+"""
+
 class DatabaseManager:
     def __init__(self, db_path=config.db_path):
+        os.makedirs(os.path.dirname(os.path.abspath(db_path)), exist_ok=True)
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
+        self.cursor.executescript(SCHEMA)
+        self.conn.commit()
 
     def insert_data(self, query, data):
         self.cursor.execute(query, data)
@@ -77,10 +98,10 @@ class DatabaseManager:
                 self.insert_data("INSERT INTO chat_response (response_id, object, created, model, choices, usage, system_fingerprint, request_index) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", \
                                     (response['id'], response['object'], response['created'], response['model'], json.dumps(response['choices']), json.dumps(response['usage']), \
                                         response['id'], request_index))
-            else: #if "gpt" in response['model']:
+            else: #if "gpt" in response['model']: (also vLLM / OpenAI-compatible servers, which may omit some fields)
                 self.insert_data("INSERT INTO chat_response (response_id, object, created, model, choices, usage, system_fingerprint, request_index) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", \
-                                    (response['id'], response['object'], response['created'], response['model'], json.dumps(response['choices']), json.dumps(response['usage']), \
-                                        response['system_fingerprint'], request_index))
+                                    (response.get('id'), response.get('object'), response.get('created'), response['model'], json.dumps(response['choices']), json.dumps(response.get('usage')), \
+                                        response.get('system_fingerprint'), request_index))
             row = self.query_data(f"SELECT response_index FROM chat_response WHERE request_index = ?", (request_index,)).fetchone()
             
         role_index = self.query_data(f"SELECT role_index FROM chat_request WHERE request_index = ?", (request_index,)).fetchone()[0]

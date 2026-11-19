@@ -1,0 +1,7 @@
+requests
+pygments==2.17.2
+tiktoken>=0.5.1
+redis==5.0.1
+flask==3.0.0
+datasets
+rank_bm25==0.2.2

@@ -46,8 +46,16 @@ def generate_diff(file1_path, file2_path):
     return diff_string
 
 
+def get_encoding(model_name):
+    # tiktoken only knows OpenAI models; for others (e.g. Qwen) use cl100k_base as an approximation
+    try:
+        return tiktoken.encoding_for_model(model_name)
+    except KeyError:
+        return tiktoken.get_encoding("cl100k_base")
+
+
 def get_token_num(model_name, system_prompt, user_prompt=None):
-    enc = tiktoken.encoding_for_model(model_name)
+    enc = get_encoding(model_name)
     length_system_prompt = len(enc.encode(system_prompt))
     if user_prompt is None:
         return length_system_prompt
@@ -55,6 +63,6 @@ def get_token_num(model_name, system_prompt, user_prompt=None):
 
 
 def truncate_user_prompt(model_name, system_prompt, user_prompt, max_token_num):
-    enc = tiktoken.encoding_for_model(model_name)
+    enc = get_encoding(model_name)
     length_system_prompt = len(enc.encode(system_prompt))
     return enc.decode(enc.encode(user_prompt)[:max_token_num - length_system_prompt])

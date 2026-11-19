@@ -22,8 +22,10 @@
 conda create -n magis python=3.11 -y
 conda activate magis
 conda install redis==5.0.3 -y  # If you need to cache repeated requests to the same LLM
-pip install openai==0.27.8 pygments==2.17.2 pydeps==1.12.17 tiktoken==0.5.1 redis==5.0.1 flask==3.0.0 datasets==2.16.1
+pip install -r requirements.txt
 ```
+
+The LLM is reached through any OpenAI-compatible endpoint (e.g. a local vLLM server); see [SWE-bench.md](exp/SWE-bench/README.md) for the settings.
 
 ## 🚀 Run
 
