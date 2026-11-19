@@ -4,7 +4,8 @@ BTech final-year capstone (IIITDM Kurnool) by Aniket Gupta and Akshat Jaipuriar,
 Dr. N. Srinivas Naik and Dr. K. Sathya Babu. Goal: a working system, a final report, and a paper submission.
 
 This repo is a fork of the official MAGIS code (github.com/co-evolve-lab/magis), pushed to
-github.com/An1ketGupta/Magis-Agent. `main` = untouched upstream; work happens on branches.
+github.com/An1ketGupta/Magis-Agent. `main` holds merged work (upstream MAGIS = commit `5ae2591`);
+new work happens on branches and is merged into `main`.
 
 ## Start of every session
 1. Read `docs/STATUS.md` (current state, next steps, blockers), then whatever doc the task needs:
