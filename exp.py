@@ -4,12 +4,29 @@ import os
 import shutil
 
 import config
+import token_usage
 from log import log
 from process import main as process_main
 logger = log(__name__).get_log_obj()
 
 
+def save_predictions(gen_result_list, save_path):
+    # SWE-bench harness format (one JSON object per line); an empty patch counts as "no prediction"
+    with open(save_path, "w") as f:
+        for each_result in gen_result_list:
+            patch = each_result["model_patch"]
+            f.write(json.dumps({"instance_id": each_result["instance_id"],
+                                "model_name_or_path": str(each_result["model_name_or_path"]),
+                                "model_patch": patch if patch and patch.strip() else None}) + "\n")
+
+
 def main(args):
+    config.review = args.review
+    config.max_try_times = args.max_review_rounds
+    token_usage.set_context(log_path=os.path.join(config.exp_json_result_path, f"{args.version}_token_usage.jsonl"))
+    logger.info(f"Setting: oracle={args.oracle}, hints_text={args.hints_text}, review={config.review}, "
+                f"max_review_rounds={config.max_try_times}, model={args.model_name}, temperature={config.llm_temperature}")
+
     with open(args.swe_bench_tasks) as f:
         swe_bench_tasks = json.load(f)
 
@@ -57,7 +74,7 @@ def main(args):
 
     candidate_file_dict = None
     if args.oracle:
-        with open("exp/SWE-bench/instance_oracle_file_dict.json") as f:
+        with open(args.oracle_file_path) as f:
             candidate_file_dict = json.load(f)
 
     if os.path.exists(config.local_repo_path):
@@ -105,6 +122,7 @@ def main(args):
         instance_id = each_task['instance_id']
         target_repo_path = os.path.join(config.virtual_env_path, "manager", instance_id)
         logger.info(f"Processing Task {idx+1}/{len(swe_bench_tasks)}: {each_task['instance_id']}")
+        token_usage.set_context(instance_id=instance_id)
 
         # run the task
         process_args = argparse.Namespace()
@@ -131,7 +149,8 @@ def main(args):
         process_args.hints_text = args.hints_text
         logger.info(process_args)
         if not args.only_find_file_list:
-            patch, before_review_patch = process_main(process_args)
+            # process_main returns None when the task fails; record an empty patch and continue
+            patch, before_review_patch = process_main(process_args) or (None, None)
 
             gen_result = {"instance_id": instance_id, "model_name_or_path": process_args.version,
                         "model_patch": patch}
@@ -157,24 +176,36 @@ def main(args):
         logger.info("-"*50)
     
     if not args.only_find_file_list:
-        with open(os.path.join(config.exp_json_result_path, f"{process_args.version}.json"), "w") as f:
+        with open(os.path.join(config.exp_json_result_path, f"{args.version}.json"), "w") as f:
             json.dump(gen_result_list, f)
 
-        with open(os.path.join(config.exp_json_result_path, f"{process_args.version}_before_review.json"), "w") as f:
+        with open(os.path.join(config.exp_json_result_path, f"{args.version}_before_review.json"), "w") as f:
             json.dump(before_review_gen_result_list, f)
-    
+
+        save_predictions(gen_result_list, os.path.join(config.exp_json_result_path, f"{args.version}_predictions.jsonl"))
+        save_predictions(before_review_gen_result_list,
+                         os.path.join(config.exp_json_result_path, f"{args.version}_before_review_predictions.jsonl"))
+        logger.info(f"Predictions for the SWE-bench harness saved in {config.exp_json_result_path}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--swe_bench_tasks", type=str, help="Path to SWE-bench task instances file", 
-                        default="exp/SWE-bench/assets/swe-bench.json")
-    parser.add_argument("--idx_list_file_path", type=str, default="exp/SWE-bench/gpt_4_selected_idx_short_patch.json")
+                        default="exp/SWE-bench/assets/lite.json")
+    # the paper's subset list (gpt_4_selected_idx_short_patch.json) is not in the released repo
+    parser.add_argument("--idx_list_file_path", type=str, default=None)
     parser.add_argument("--model_name", default="gpt-4-0613", help="Default model name")
     parser.add_argument("--max_num_for_test", type=int, default=None)
     parser.add_argument("--start_idx", type=int, default=None)
-    parser.add_argument("--end_idx", type=int, default=100)
+    parser.add_argument("--end_idx", type=int, default=None)
     parser.add_argument("--skip_existing", action="store_true", help="(Optional) Skip existing logs", default=True)
-    parser.add_argument("--oracle", default=True, action="store_true", help="(Optional) Evaluate on oracle setting")
+    # was `default=True, action="store_true"`, which made the oracle (gold files) setting impossible to turn off
+    parser.add_argument("--oracle", default=False, action="store_true", help="(Optional) Evaluate on oracle setting (gold files given)")
+    parser.add_argument("--oracle_file_path", type=str, default=None,
+                        help="(Optional) instance_id -> files changed by the gold patch "
+                             "(default: <swe_bench_tasks>_oracle_file_dict.json, see exp/SWE-bench/prepare_dataset.py)")
+    parser.add_argument("--review", action="store_true", help="(Optional) Enable the QA Engineer's review loop (full MAGIS)", default=False)
+    parser.add_argument("--max_review_rounds", type=int, default=2, help="(Optional) Max Developer attempts with QA review")
     parser.add_argument("--version", type=int, default=240201) # add hints after the issue description
     parser.add_argument("--filter_repofullname", help="(Optional) keeps the repo only", default=None) # 'scikit-learn/scikit-learn')
     parser.add_argument("--sort_by_issue", action="store_true", help="(Optional) Sort by Issue Number for Each Repo", default=False)
@@ -182,5 +213,7 @@ if __name__ == "__main__":
     parser.add_argument("--only_find_file_list", action="store_true", help="(Optional) finish the process when it generates the candidate_file_list ", default=False)
     parser.add_argument("--bm_top_k", type=int, help="(Optional) Top k for BM25", default=20)
     args = parser.parse_args()
+    if args.oracle_file_path is None:
+        args.oracle_file_path = f"{args.swe_bench_tasks.rsplit('.json', 1)[0]}_oracle_file_dict.json"
     logger = log(__name__).get_log_obj()
     main(args)

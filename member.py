@@ -128,7 +128,12 @@ class Member:
         
         return response
     
-    def work(self, review=config.review, test=False, max_try_times=2):
+    def work(self, review=None, test=False, max_try_times=None):
+        # read the QA settings at call time (a default argument would freeze them at import time)
+        if review is None:
+            review = config.review
+        if max_try_times is None:
+            max_try_times = config.max_try_times
         self.update_folder()
         add_review = None
         code_review_decision = None
