@@ -15,6 +15,11 @@
 5. `merge_code_change` concatenates per-member patches → `<version>_predictions.jsonl`.
 
 ## Quirks to watch (not changed, behavior-relevant)
+- **Truncation can cut the instructions (open decision).** MAGIS prompts put the code first and the `# TODO`
+  instructions last; our truncation (like MAGIS's for gpt-4-1106) keeps the head, so on files larger than the
+  context the instructions are lost, the answer cannot be parsed and the edit fails ("Nothing changed.").
+  Seen in the Config B mock test with a large file. Options: truncate the code part instead of the end, or
+  keep it and report it. Check how often it happens (`truncated` in the token log) in the smoke test.
 - Code-block parsing splits on `` ```Python `` exactly (capital P, the Pygments lexer name). If the model writes
   `` ```python ``, the edit silently fails and the log says `Nothing changed.` Count these in the smoke test.
 - Editing from line 1 inserts a blank first line (`before_modify_code` is empty). Patches still apply.
@@ -34,5 +39,8 @@
 - `member.py`: QA settings read at call time. `common.py`: tiktoken fallback. `database_manager.py`: schema created.
 - New: `token_usage.py`, `exp/SWE-bench/{prepare_dataset,bm25_retrieval,summarize_tokens}.py`, `setup_repos.sh`,
   `requirements.txt`, `.gitattributes` (LF for `.sh`).
+- Later (branch `config-b-langgraph`): `member.py` folder names always unique (D7); `Member.work(feedback=...)`
+  shows a test-failure report in every try (None = unchanged behavior); `token_usage.agent(name)` labels calls
+  made outside the agent modules. Config B lives in `repair/` + `run_repair.py` (see `DESIGN_CONFIG_B.md`).
 - BM25 is our recreation (`rank_bm25`, path + content of `.py` files at base commit, identifier-split tokens),
   not SWE-bench's Pyserini index; report it as such.

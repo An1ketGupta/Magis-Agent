@@ -2,6 +2,7 @@
 Per-call token accounting, used for the Token Reduction Rate metric.
 Each LLM call is appended as one JSON line to the file set with `set_context`.
 """
+import contextlib
 import inspect
 import json
 import os
@@ -16,7 +17,7 @@ AGENT_BY_MODULE = {
     "process.py": "meeting",
 }
 
-_context = {"instance_id": None, "log_path": None}
+_context = {"instance_id": None, "log_path": None, "agent": None}
 
 
 def set_context(instance_id=None, log_path=None):
@@ -26,7 +27,20 @@ def set_context(instance_id=None, log_path=None):
     _context["instance_id"] = instance_id
 
 
+@contextlib.contextmanager
+def agent(name):
+    # attribute the LLM calls made inside this block to `name` (for code outside the MAGIS agent modules)
+    previous = _context["agent"]
+    _context["agent"] = name
+    try:
+        yield
+    finally:
+        _context["agent"] = previous
+
+
 def caller_agent():
+    if _context["agent"] is not None:
+        return _context["agent"]
     # the first frame (from the innermost) that belongs to one of the agents' modules
     for frame_info in inspect.stack()[2:]:
         agent = AGENT_BY_MODULE.get(os.path.basename(frame_info.filename))

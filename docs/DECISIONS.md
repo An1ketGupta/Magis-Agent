@@ -31,3 +31,15 @@ already cover trained pruners).
 ### D6 (2026-11-19): Project documentation in the repo
 Docs live in `docs/` (versioned, visible to the teammate on GitHub); `CLAUDE.md` gives each new session the
 essentials.
+
+### D7 (2026-11-19): Fix MAGIS's shared Developer folders (affects A and B)
+Developers are named by an LLM call and the name is their folder. Upstream only made names unique with
+`prepare_member_folder=True`, which MAGIS's pipeline never sets, so two Developers with the same name shared
+a folder and patch file; the merged patch then held the same diff twice, which `patch --batch` (used by the
+SWE-bench harness) treats as reversed and silently undoes. Found in the Config B mock test. Fixed in
+`member.py`: names are always made unique within a team. This is a correctness fix, so A uses it too.
+
+### D8 (2026-11-19): Config B design
+LangGraph graph around the unchanged MAGIS agents (`docs/DESIGN_CONFIG_B.md`), so A vs. B isolates the
+effect of test feedback. Reproduction scripts in the Agentless format, written from the issue only; a
+deterministic router (traceback location → Developer / Custodian / Manager). Regression tests deferred to v2.

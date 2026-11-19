@@ -36,13 +36,16 @@ class Member:
         self.username = '_'.join(self.name.split())
         self.username = to_safe_folder_name(self.username)
         self.user_path = os.path.join(self.virtual_env_folder, self.username)
-        if prepare_member_folder or not os.path.exists(self.user_path):
-            count = 0
-            while os.path.exists(self.user_path):
-                count += 1
-                self.username = f"{self.username}_{count}"
-                self.user_path = os.path.join(virtual_env_folder, self.username)
-            os.makedirs(self.user_path, exist_ok=True)
+        # Always give each member its own folder. Upstream only did this with prepare_member_folder=True, so two
+        # members with the same LLM-chosen name shared one folder and patch file, and the merged patch had the same
+        # diff twice. The Manager deletes the team's folders before building a team, so existing folders are teammates'.
+        base_username = self.username
+        count = 0
+        while os.path.exists(self.user_path):
+            count += 1
+            self.username = f"{base_username}_{count}"
+            self.user_path = os.path.join(self.virtual_env_folder, self.username)
+        os.makedirs(self.user_path, exist_ok=True)
         
         self.project_path = os.path.abspath(os.path.join(self.user_path, self.project_name))
         self.operator_gitconfig = GitConfig(self.username, email_domain)
@@ -128,12 +131,14 @@ class Member:
         
         return response
     
-    def work(self, review=None, test=False, max_try_times=None):
+    def work(self, review=None, test=False, max_try_times=None, feedback=None):
         # read the QA settings at call time (a default argument would freeze them at import time)
         if review is None:
             review = config.review
         if max_try_times is None:
             max_try_times = config.max_try_times
+        # feedback: report of a failed test run of the previous attempt (Config B), shown in every try
+        feedback_info = f"## Feedback from Running the Tests\n{feedback}\n\n" if feedback else ""
         self.update_folder()
         add_review = None
         code_review_decision = None
@@ -145,13 +150,14 @@ class Member:
         for try_i in range(max_try_times):
             try:
                 if add_review is not None:
-                    after_review_info = (f"## Last Round of Code Modification and Its Review\n"
+                    after_review_info = (f"{feedback_info}"
+                                            f"## Last Round of Code Modification and Its Review\n"
                                             f"### Code Modification\n"
                                             f"```diff\n{code_diff}\n```\n"
                                             f"### Code Review\n"
                                             f"{add_review}\n\n")
                 else:
-                    after_review_info = f"## Plan\n{self.plan}\n\n"
+                    after_review_info = f"{feedback_info}## Plan\n{self.plan}\n\n"
 
                 if self.file_content is not None:
                     number_with_code = get_file_content(os.path.join(self.project_path, self.file_path), add_number=True)
