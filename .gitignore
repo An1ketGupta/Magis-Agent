@@ -3,3 +3,6 @@ sqlite_db
 
 *.jsonl
 *.json
+# capstone: keep result files of logged runs (EXPERIMENTS.md)
+!exp/SWE-bench/results/**/*.json
+!exp/SWE-bench/results/**/*.jsonl

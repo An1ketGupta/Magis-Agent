@@ -1,0 +1,51 @@
+{
+  "files": 300,
+  "instances": 300,
+  "tokenizer": "Qwen/Qwen2.5-7B-Instruct",
+  "full_tokens": {
+    "median": 9638.5,
+    "mean": 15414
+  },
+  "budgets": {
+    "skeleton_only": {
+      "files_pruned_%": 100.0,
+      "edits_visible_all_files_%": 12.0,
+      "edits_visible_pruned_files_%": 12.0,
+      "instances_all_edits_visible_%": 12.0,
+      "total_tokens_vs_full_%": 50.6,
+      "median_tokens": 4764.0
+    },
+    "2000": {
+      "files_pruned_%": 88.7,
+      "edits_visible_all_files_%": 23.7,
+      "edits_visible_pruned_files_%": 13.9,
+      "instances_all_edits_visible_%": 23.7,
+      "total_tokens_vs_full_%": 51.4,
+      "median_tokens": 4764.0
+    },
+    "4000": {
+      "files_pruned_%": 76.0,
+      "edits_visible_all_files_%": 44.0,
+      "edits_visible_pruned_files_%": 26.3,
+      "instances_all_edits_visible_%": 44.0,
+      "total_tokens_vs_full_%": 53.7,
+      "median_tokens": 4764.0
+    },
+    "8000": {
+      "files_pruned_%": 53.7,
+      "edits_visible_all_files_%": 65.7,
+      "edits_visible_pruned_files_%": 36.0,
+      "instances_all_edits_visible_%": 65.7,
+      "total_tokens_vs_full_%": 59.7,
+      "median_tokens": 7946.0
+    },
+    "16000": {
+      "files_pruned_%": 37.3,
+      "edits_visible_all_files_%": 83.3,
+      "edits_visible_pruned_files_%": 55.4,
+      "instances_all_edits_visible_%": 83.3,
+      "total_tokens_vs_full_%": 71.5,
+      "median_tokens": 9638.5
+    }
+  }
+}
