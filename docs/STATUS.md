@@ -3,8 +3,8 @@
 _Last updated: 2026-11-20_
 
 ## Where we are
-- **Step 0 and Config B v1 are on `main`.** Today's work is on branch `truncation-and-analyses` (not merged,
-  not pushed): middle truncation (D9), DockerRunner fix, skeleton pruning module (C2, D10), no-LLM analyses,
+- **Step 0, Config B v1 and the 2026-11-20 work are on `main`** (merged from `truncation-and-analyses`,
+  pushed to GitHub): middle truncation (D9), DockerRunner fix, skeleton pruning module (C2, D10), no-LLM analyses,
   machine check script, review notes (`REVIEW_PREP.md`). 28 unit tests pass.
 - **Infrastructure verified on the laptop (E4):** the official harness resolves 5/5 gold patches on offline
   repos (flask, pytest); Config B's DockerRunner + router behave as designed on a real SWE-bench image, after a
@@ -35,7 +35,6 @@ Qwen3-Coder-30B-A3B in 4-bit). Old CentOS 7 (glibc 2.17) would need vLLM in Dock
 ## Waiting on the user
 - GPU access: Tailscale name/IP, username, and the OK to run long jobs on it.
 - Review format (slides/report/demo); supervisors' OK on Path B; AI-assistance rules.
-- OK to merge `truncation-and-analyses` into `main` and push to GitHub.
 
 ## Laptop state
 - Cleaned 2026-11-20: SWE-bench images, repo clones and HF cache deleted; WSL and Docker disks compacted
