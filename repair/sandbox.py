@@ -68,8 +68,12 @@ class DockerRunner:
     def run(self, patch, script):
         workdir = prepare_workdir(patch, script)
         with open(os.path.join(workdir, "run.sh"), "w") as f:
+            # Some images install the repo as a plain copy in site-packages (e.g. requests: `pip install .`),
+            # so the script must import /testbed (or /testbed/src) first, or it tests the unpatched copy.
             f.write("WORK=/work\nsource /opt/miniconda3/bin/activate testbed\ncd /testbed\n"
-                    f"{APPLY_SCRIPT}\ntimeout {self.timeout} python /work/repro.py\n")
+                    f"{APPLY_SCRIPT}\n"
+                    "if [ -d /testbed/src ]; then export PYTHONPATH=/testbed/src:/testbed; else export PYTHONPATH=/testbed; fi\n"
+                    f"timeout {self.timeout} python /work/repro.py\n")
         completed, timed_out = None, False
         try:
             completed = subprocess.run(["docker", "run", "--rm", "--network", "none", "-v", f"{workdir}:/work",

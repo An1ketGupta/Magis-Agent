@@ -43,3 +43,19 @@ SWE-bench harness) treats as reversed and silently undoes. Found in the Config B
 LangGraph graph around the unchanged MAGIS agents (`docs/DESIGN_CONFIG_B.md`), so A vs. B isolates the
 effect of test feedback. Reproduction scripts in the Agentless format, written from the issue only; a
 deterministic router (traceback location → Developer / Custodian / Manager). Regression tests deferred to v2.
+
+### D9 (2026-11-20): Over-long prompts are cut in the middle, not at the end
+Supersedes the truncation part of D2. MAGIS prompts put the code first and the instructions (`# TODO`,
+answer format) last, so keeping only the head made the call useless on files larger than the context
+(the answer cannot be parsed, the edit fails as "Nothing changed."). `cut_prompt` in `chat_with_LLM.py`
+now keeps the start and the last 30% of the kept text, with a marker for the omitted middle. This is a
+run-enabling fix like Step 0 and applies to every config, so A vs. B stays fair. `MAGIS_TRUNCATION=head`
+restores MAGIS's strategy; how often truncation happens is still logged (`truncated` in the token log).
+
+### D10 (2026-11-20): Skeleton pruning (C2) uses Python's `ast`, tuned outside Lite
+`repair/pruning.py` folds function bodies and long docstrings and unfolds the best-scored blocks within a
+token budget, keeping the real line numbers (MAGIS's line-range edits keep working). `ast` instead of
+Tree-sitter: all SWE-bench repos are Python, line ranges are exact, no extra dependency; unparsable files are
+shown whole. Scorer: BM25 per block, with blocks named in the issue first; SWE-Pruner can be plugged in as
+another scorer. Design choices are compared on 100 SWE-bench (full) instances that are not in Lite (same
+12 repos, seed 0); Lite numbers are reported once per version, never used to choose settings.

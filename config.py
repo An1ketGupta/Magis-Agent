@@ -42,6 +42,10 @@ llm_seed = int(os.environ["MAGIS_LLM_SEED"]) if os.environ.get("MAGIS_LLM_SEED")
 # Prompts that do not fit are truncated (and the truncation is recorded in the token log).
 llm_max_tokens = int(os.environ.get("MAGIS_LLM_MAX_TOKENS", "4096"))
 llm_max_context = int(os.environ.get("MAGIS_LLM_MAX_CONTEXT", "32768"))
+# How over-long prompts are cut: "middle" keeps the start and the end (where MAGIS puts the
+# instructions), "head" keeps only the start (MAGIS's original strategy, which can lose the instructions).
+llm_truncation = os.environ.get("MAGIS_TRUNCATION", "middle")
+llm_truncation_tail_ratio = float(os.environ.get("MAGIS_TRUNCATION_TAIL_RATIO", "0.3"))
 
 # Redis response cache (off by default; needs `redis-server` running).
 # Keys include the namespace, so repeated runs (e.g. different seeds) do not share answers.

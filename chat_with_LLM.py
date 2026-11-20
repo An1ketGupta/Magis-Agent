@@ -78,9 +78,24 @@ def count_prompt_tokens(model_name, system_prompt, user_prompt):
         return None
 
 
+def cut_prompt(user_prompt, keep_chars, mode=None):
+    # "middle" (default): drop text from the middle, so both the start of the prompt and the
+    # instructions at its end survive (MAGIS prompts put the code first and the task last).
+    # "head": keep only the start, the strategy MAGIS used for gpt-4-1106-preview.
+    mode = mode or config.llm_truncation
+    if keep_chars >= len(user_prompt):
+        return user_prompt
+    if mode == "head":
+        return user_prompt[:keep_chars]
+    tail_chars = int(keep_chars * config.llm_truncation_tail_ratio)
+    head_chars = keep_chars - tail_chars
+    omitted = len(user_prompt) - head_chars - tail_chars
+    marker = f"\n... [{omitted} characters omitted to fit the context window] ...\n"
+    return user_prompt[:head_chars] + marker + user_prompt[len(user_prompt)-tail_chars:]
+
+
 def truncate_to_context(model_name, system_prompt, user_prompt, error_message):
-    # Keep the head of the user prompt so that prompt + completion fits in the context window
-    # (the same strategy MAGIS used for gpt-4-1106-preview).
+    # Shorten the user prompt so that prompt + completion fits in the context window (see cut_prompt).
     max_prompt_tokens = config.llm_max_context - (config.llm_max_tokens or 0)
     token_num = count_prompt_tokens(model_name, system_prompt, user_prompt)
     if token_num is None:
@@ -90,7 +105,7 @@ def truncate_to_context(model_name, system_prompt, user_prompt, error_message):
         if token_num is None or token_num <= max_prompt_tokens:
             break
         keep_ratio = max_prompt_tokens / token_num * 0.95
-        user_prompt = user_prompt[:int(len(user_prompt) * keep_ratio)]
+        user_prompt = cut_prompt(user_prompt, int(len(user_prompt) * keep_ratio))
         token_num = count_prompt_tokens(model_name, system_prompt, user_prompt)
     logger.error(f"Truncated the user prompt to {len(user_prompt)} characters ({token_num} tokens)")
     return user_prompt

@@ -1,0 +1,130 @@
+{
+  "instances": 300,
+  "tokenizer": "Qwen/Qwen2.5-7B-Instruct",
+  "context_window": 32768,
+  "completion_reserve": 4096,
+  "prompt_budget": 28672,
+  "custodian_top_k": 20,
+  "recall": {
+    "top1": {
+      "all_gold_files_found_%": 38.0,
+      "any_gold_file_found_%": 38.0,
+      "mean_file_recall_%": 38.0
+    },
+    "top5": {
+      "all_gold_files_found_%": 64.0,
+      "any_gold_file_found_%": 64.0,
+      "mean_file_recall_%": 64.0
+    },
+    "top10": {
+      "all_gold_files_found_%": 70.3,
+      "any_gold_file_found_%": 70.3,
+      "mean_file_recall_%": 70.3
+    },
+    "top20": {
+      "all_gold_files_found_%": 77.7,
+      "any_gold_file_found_%": 77.7,
+      "mean_file_recall_%": 77.7
+    },
+    "top50": {
+      "all_gold_files_found_%": 89.0,
+      "any_gold_file_found_%": 89.0,
+      "mean_file_recall_%": 89.0
+    }
+  },
+  "context": {
+    "developer_prompt_largest_gold_file": {
+      "n": 300,
+      "median": 10238.5,
+      "p90": 35852,
+      "max": 116626,
+      "mean": 16014.4
+    },
+    "instances_where_a_gold_file_overflows_%": 21.7,
+    "instances_where_a_gold_file_overflows_16k_%": 46.3,
+    "custodian_prompt_per_file": {
+      "n": 6000,
+      "median": 6397.5,
+      "p90": 23043,
+      "max": 111528,
+      "mean": 10368.4
+    },
+    "custodian_files_overflowing_%": 6.5,
+    "custodian_input_tokens_per_instance": {
+      "n": 300,
+      "median": 190519.5,
+      "p90": 389682,
+      "max": 542381,
+      "mean": 207367.9
+    },
+    "issue_tokens": {
+      "n": 300,
+      "median": 271.0,
+      "p90": 874,
+      "max": 7721,
+      "mean": 456.5
+    }
+  },
+  "by_repo": {
+    "astropy/astropy": {
+      "instances": 6,
+      "all_gold_in_top20_%": 83.3,
+      "median_largest_gold_prompt": 9061.0
+    },
+    "django/django": {
+      "instances": 114,
+      "all_gold_in_top20_%": 78.1,
+      "median_largest_gold_prompt": 6893.0
+    },
+    "matplotlib/matplotlib": {
+      "instances": 23,
+      "all_gold_in_top20_%": 69.6,
+      "median_largest_gold_prompt": 22012
+    },
+    "mwaskom/seaborn": {
+      "instances": 4,
+      "all_gold_in_top20_%": 100.0,
+      "median_largest_gold_prompt": 16737.0
+    },
+    "pallets/flask": {
+      "instances": 3,
+      "all_gold_in_top20_%": 100.0,
+      "median_largest_gold_prompt": 7172
+    },
+    "psf/requests": {
+      "instances": 6,
+      "all_gold_in_top20_%": 100.0,
+      "median_largest_gold_prompt": 8712.5
+    },
+    "pydata/xarray": {
+      "instances": 5,
+      "all_gold_in_top20_%": 100.0,
+      "median_largest_gold_prompt": 12668
+    },
+    "pylint-dev/pylint": {
+      "instances": 6,
+      "all_gold_in_top20_%": 66.7,
+      "median_largest_gold_prompt": 2790.5
+    },
+    "pytest-dev/pytest": {
+      "instances": 17,
+      "all_gold_in_top20_%": 58.8,
+      "median_largest_gold_prompt": 7977
+    },
+    "scikit-learn/scikit-learn": {
+      "instances": 23,
+      "all_gold_in_top20_%": 87.0,
+      "median_largest_gold_prompt": 7189
+    },
+    "sphinx-doc/sphinx": {
+      "instances": 16,
+      "all_gold_in_top20_%": 87.5,
+      "median_largest_gold_prompt": 10676.0
+    },
+    "sympy/sympy": {
+      "instances": 77,
+      "all_gold_in_top20_%": 74.0,
+      "median_largest_gold_prompt": 17643
+    }
+  }
+}

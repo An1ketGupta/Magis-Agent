@@ -1,0 +1,431 @@
+Database path: /mnt/c/My_Folder/Sem 7/Capstone/Project/magis/sqlite_db/magis.db
+[1/300] astropy__astropy-12907: gold in top-20=True, largest gold file prompt=4232 tokens
+[2/300] astropy__astropy-14182: gold in top-20=False, largest gold file prompt=1216 tokens
+[3/300] astropy__astropy-14365: gold in top-20=True, largest gold file prompt=8281 tokens
+[4/300] astropy__astropy-14995: gold in top-20=True, largest gold file prompt=9841 tokens
+[5/300] astropy__astropy-6938: gold in top-20=True, largest gold file prompt=17883 tokens
+[6/300] astropy__astropy-7746: gold in top-20=True, largest gold file prompt=45361 tokens
+[7/300] django__django-10914: gold in top-20=True, largest gold file prompt=8879 tokens
+[8/300] django__django-10924: gold in top-20=True, largest gold file prompt=28743 tokens
+[9/300] django__django-11001: gold in top-20=True, largest gold file prompt=20648 tokens
+[10/300] django__django-11019: gold in top-20=True, largest gold file prompt=13205 tokens
+[11/300] django__django-11039: gold in top-20=True, largest gold file prompt=1384 tokens
+[12/300] django__django-11049: gold in top-20=True, largest gold file prompt=28452 tokens
+[13/300] django__django-11099: gold in top-20=True, largest gold file prompt=833 tokens
+[14/300] django__django-11133: gold in top-20=True, largest gold file prompt=7140 tokens
+[15/300] django__django-11179: gold in top-20=True, largest gold file prompt=4606 tokens
+[16/300] django__django-11283: gold in top-20=True, largest gold file prompt=1123 tokens
+[17/300] django__django-11422: gold in top-20=True, largest gold file prompt=7539 tokens
+[18/300] django__django-11564: gold in top-20=False, largest gold file prompt=3385 tokens
+[19/300] django__django-11583: gold in top-20=True, largest gold file prompt=7691 tokens
+[20/300] django__django-11620: gold in top-20=True, largest gold file prompt=6924 tokens
+[21/300] django__django-11630: gold in top-20=True, largest gold file prompt=3005 tokens
+[22/300] django__django-11742: gold in top-20=True, largest gold file prompt=29182 tokens
+[23/300] django__django-11797: gold in top-20=False, largest gold file prompt=7091 tokens
+[24/300] django__django-11815: gold in top-20=True, largest gold file prompt=4471 tokens
+[25/300] django__django-11848: gold in top-20=True, largest gold file prompt=6632 tokens
+[26/300] django__django-11905: gold in top-20=True, largest gold file prompt=7578 tokens
+[27/300] django__django-11910: gold in top-20=True, largest gold file prompt=17889 tokens
+[28/300] django__django-11964: gold in top-20=False, largest gold file prompt=1373 tokens
+[29/300] django__django-11999: gold in top-20=False, largest gold file prompt=29437 tokens
+[30/300] django__django-12113: gold in top-20=False, largest gold file prompt=1749 tokens
+[31/300] django__django-12125: gold in top-20=False, largest gold file prompt=4456 tokens
+[32/300] django__django-12184: gold in top-20=True, largest gold file prompt=8797 tokens
+[33/300] django__django-12284: gold in top-20=True, largest gold file prompt=29644 tokens
+[34/300] django__django-12286: gold in top-20=True, largest gold file prompt=1268 tokens
+[35/300] django__django-12308: gold in top-20=False, largest gold file prompt=6862 tokens
+[36/300] django__django-12453: gold in top-20=True, largest gold file prompt=4018 tokens
+[37/300] django__django-12470: gold in top-20=True, largest gold file prompt=21611 tokens
+[38/300] django__django-12497: gold in top-20=True, largest gold file prompt=22097 tokens
+[39/300] django__django-12589: gold in top-20=True, largest gold file prompt=33235 tokens
+[40/300] django__django-12700: gold in top-20=True, largest gold file prompt=7040 tokens
+[41/300] django__django-12708: gold in top-20=True, largest gold file prompt=16946 tokens
+[42/300] django__django-12747: gold in top-20=True, largest gold file prompt=6144 tokens
+[43/300] django__django-12856: gold in top-20=True, largest gold file prompt=25478 tokens
+[44/300] django__django-12908: gold in top-20=True, largest gold file prompt=26678 tokens
+[45/300] django__django-12915: gold in top-20=True, largest gold file prompt=1540 tokens
+[46/300] django__django-12983: gold in top-20=True, largest gold file prompt=5697 tokens
+[47/300] django__django-13028: gold in top-20=True, largest gold file prompt=33806 tokens
+[48/300] django__django-13033: gold in top-20=False, largest gold file prompt=21852 tokens
+[49/300] django__django-13158: gold in top-20=False, largest gold file prompt=33931 tokens
+[50/300] django__django-13220: gold in top-20=True, largest gold file prompt=2371 tokens
+[51/300] django__django-13230: gold in top-20=True, largest gold file prompt=3131 tokens
+[52/300] django__django-13265: gold in top-20=True, largest gold file prompt=17780 tokens
+[53/300] django__django-13315: gold in top-20=True, largest gold file prompt=18477 tokens
+[54/300] django__django-13321: gold in top-20=True, largest gold file prompt=4875 tokens
+[55/300] django__django-13401: gold in top-20=True, largest gold file prompt=29908 tokens
+[56/300] django__django-13447: gold in top-20=True, largest gold file prompt=7251 tokens
+[57/300] django__django-13448: gold in top-20=True, largest gold file prompt=4155 tokens
+[58/300] django__django-13551: gold in top-20=True, largest gold file prompt=1823 tokens
+[59/300] django__django-13590: gold in top-20=True, largest gold file prompt=34549 tokens
+[60/300] django__django-13658: gold in top-20=True, largest gold file prompt=5702 tokens
+[61/300] django__django-13660: gold in top-20=True, largest gold file prompt=1740 tokens
+[62/300] django__django-13710: gold in top-20=True, largest gold file prompt=29503 tokens
+[63/300] django__django-13757: gold in top-20=True, largest gold file prompt=6803 tokens
+[64/300] django__django-13768: gold in top-20=True, largest gold file prompt=3855 tokens
+[65/300] django__django-13925: gold in top-20=True, largest gold file prompt=27504 tokens
+[66/300] django__django-13933: gold in top-20=True, largest gold file prompt=18458 tokens
+[67/300] django__django-13964: gold in top-20=True, largest gold file prompt=27571 tokens
+[68/300] django__django-14016: gold in top-20=True, largest gold file prompt=4355 tokens
+[69/300] django__django-14017: gold in top-20=True, largest gold file prompt=4384 tokens
+[70/300] django__django-14155: gold in top-20=True, largest gold file prompt=8977 tokens
+[71/300] django__django-14238: gold in top-20=False, largest gold file prompt=31137 tokens
+[72/300] django__django-14382: gold in top-20=True, largest gold file prompt=4562 tokens
+[73/300] django__django-14411: gold in top-20=True, largest gold file prompt=5431 tokens
+[74/300] django__django-14534: gold in top-20=True, largest gold file prompt=3851 tokens
+[75/300] django__django-14580: gold in top-20=False, largest gold file prompt=4650 tokens
+[76/300] django__django-14608: gold in top-20=True, largest gold file prompt=6662 tokens
+[77/300] django__django-14667: gold in top-20=False, largest gold file prompt=34308 tokens
+[78/300] django__django-14672: gold in top-20=True, largest gold file prompt=4187 tokens
+[79/300] django__django-14730: gold in top-20=True, largest gold file prompt=22341 tokens
+[80/300] django__django-14752: gold in top-20=True, largest gold file prompt=1693 tokens
+[81/300] django__django-14787: gold in top-20=True, largest gold file prompt=2635 tokens
+[82/300] django__django-14855: gold in top-20=True, largest gold file prompt=5772 tokens
+[83/300] django__django-14915: gold in top-20=True, largest gold file prompt=18721 tokens
+[84/300] django__django-14997: gold in top-20=False, largest gold file prompt=3108 tokens
+[85/300] django__django-14999: gold in top-20=True, largest gold file prompt=10622 tokens
+[86/300] django__django-15061: gold in top-20=True, largest gold file prompt=13234 tokens
+[87/300] django__django-15202: gold in top-20=True, largest gold file prompt=7337 tokens
+[88/300] django__django-15213: gold in top-20=False, largest gold file prompt=30762 tokens
+[89/300] django__django-15252: gold in top-20=True, largest gold file prompt=5399 tokens
+[90/300] django__django-15320: gold in top-20=True, largest gold file prompt=18640 tokens
+[91/300] django__django-15347: gold in top-20=True, largest gold file prompt=2486 tokens
+[92/300] django__django-15388: gold in top-20=False, largest gold file prompt=1106 tokens
+[93/300] django__django-15400: gold in top-20=True, largest gold file prompt=5510 tokens
+[94/300] django__django-15498: gold in top-20=True, largest gold file prompt=2147 tokens
+[95/300] django__django-15695: gold in top-20=True, largest gold file prompt=12907 tokens
+[96/300] django__django-15738: gold in top-20=True, largest gold file prompt=21596 tokens
+[97/300] django__django-15781: gold in top-20=True, largest gold file prompt=8080 tokens
+[98/300] django__django-15789: gold in top-20=True, largest gold file prompt=5552 tokens
+[99/300] django__django-15790: gold in top-20=True, largest gold file prompt=1330 tokens
+[100/300] django__django-15814: gold in top-20=False, largest gold file prompt=36351 tokens
+[101/300] django__django-15819: gold in top-20=True, largest gold file prompt=4986 tokens
+[102/300] django__django-15851: gold in top-20=False, largest gold file prompt=1257 tokens
+[103/300] django__django-15902: gold in top-20=True, largest gold file prompt=7130 tokens
+[104/300] django__django-15996: gold in top-20=True, largest gold file prompt=4771 tokens
+[105/300] django__django-16041: gold in top-20=True, largest gold file prompt=7159 tokens
+[106/300] django__django-16046: gold in top-20=False, largest gold file prompt=1764 tokens
+[107/300] django__django-16139: gold in top-20=True, largest gold file prompt=5695 tokens
+[108/300] django__django-16229: gold in top-20=False, largest gold file prompt=4342 tokens
+[109/300] django__django-16255: gold in top-20=True, largest gold file prompt=3467 tokens
+[110/300] django__django-16379: gold in top-20=True, largest gold file prompt=2430 tokens
+[111/300] django__django-16400: gold in top-20=False, largest gold file prompt=2336 tokens
+[112/300] django__django-16408: gold in top-20=False, largest gold file prompt=26382 tokens
+[113/300] django__django-16527: gold in top-20=True, largest gold file prompt=2157 tokens
+[114/300] django__django-16595: gold in top-20=True, largest gold file prompt=4485 tokens
+[115/300] django__django-16816: gold in top-20=False, largest gold file prompt=16107 tokens
+[116/300] django__django-16820: gold in top-20=True, largest gold file prompt=13295 tokens
+[117/300] django__django-16873: gold in top-20=False, largest gold file prompt=11285 tokens
+[118/300] django__django-16910: gold in top-20=False, largest gold file prompt=35973 tokens
+[119/300] django__django-17051: gold in top-20=True, largest gold file prompt=33546 tokens
+[120/300] django__django-17087: gold in top-20=False, largest gold file prompt=4965 tokens
+[121/300] matplotlib__matplotlib-18869: gold in top-20=True, largest gold file prompt=18012 tokens
+[122/300] matplotlib__matplotlib-22711: gold in top-20=True, largest gold file prompt=52102 tokens
+[123/300] matplotlib__matplotlib-22835: gold in top-20=False, largest gold file prompt=21985 tokens
+[124/300] matplotlib__matplotlib-23299: gold in top-20=True, largest gold file prompt=18843 tokens
+[125/300] matplotlib__matplotlib-23314: gold in top-20=False, largest gold file prompt=45997 tokens
+[126/300] matplotlib__matplotlib-23476: gold in top-20=False, largest gold file prompt=45222 tokens
+[127/300] matplotlib__matplotlib-23562: gold in top-20=True, largest gold file prompt=12492 tokens
+[128/300] matplotlib__matplotlib-23563: gold in top-20=True, largest gold file prompt=12492 tokens
+[129/300] matplotlib__matplotlib-23913: gold in top-20=True, largest gold file prompt=16860 tokens
+[130/300] matplotlib__matplotlib-23964: gold in top-20=True, largest gold file prompt=18940 tokens
+[131/300] matplotlib__matplotlib-23987: gold in top-20=True, largest gold file prompt=46460 tokens
+[132/300] matplotlib__matplotlib-24149: gold in top-20=True, largest gold file prompt=116626 tokens
+[133/300] matplotlib__matplotlib-24265: gold in top-20=True, largest gold file prompt=3545 tokens
+[134/300] matplotlib__matplotlib-24334: gold in top-20=True, largest gold file prompt=35187 tokens
+[135/300] matplotlib__matplotlib-24970: gold in top-20=True, largest gold file prompt=37163 tokens
+[136/300] matplotlib__matplotlib-25079: gold in top-20=False, largest gold file prompt=37081 tokens
+[137/300] matplotlib__matplotlib-25311: gold in top-20=False, largest gold file prompt=20285 tokens
+[138/300] matplotlib__matplotlib-25332: gold in top-20=False, largest gold file prompt=29960 tokens
+[139/300] matplotlib__matplotlib-25433: gold in top-20=True, largest gold file prompt=47599 tokens
+[140/300] matplotlib__matplotlib-25442: gold in top-20=True, largest gold file prompt=20197 tokens
+[141/300] matplotlib__matplotlib-25498: gold in top-20=True, largest gold file prompt=22012 tokens
+[142/300] matplotlib__matplotlib-26011: gold in top-20=True, largest gold file prompt=35227 tokens
+[143/300] matplotlib__matplotlib-26020: gold in top-20=False, largest gold file prompt=7875 tokens
+[144/300] mwaskom__seaborn-2848: gold in top-20=True, largest gold file prompt=21915 tokens
+[145/300] mwaskom__seaborn-3010: gold in top-20=True, largest gold file prompt=1046 tokens
+[146/300] mwaskom__seaborn-3190: gold in top-20=True, largest gold file prompt=11559 tokens
+[147/300] mwaskom__seaborn-3407: gold in top-20=True, largest gold file prompt=31504 tokens
+[148/300] pallets__flask-4045: gold in top-20=True, largest gold file prompt=7172 tokens
+[149/300] pallets__flask-4992: gold in top-20=True, largest gold file prompt=4570 tokens
+[150/300] pallets__flask-5063: gold in top-20=True, largest gold file prompt=12593 tokens
+[151/300] psf__requests-1963: gold in top-20=True, largest gold file prompt=7153 tokens
+[152/300] psf__requests-2148: gold in top-20=True, largest gold file prompt=9638 tokens
+[153/300] psf__requests-2317: gold in top-20=True, largest gold file prompt=8334 tokens
+[154/300] psf__requests-2674: gold in top-20=True, largest gold file prompt=5651 tokens
+[155/300] psf__requests-3362: gold in top-20=True, largest gold file prompt=9091 tokens
+[156/300] psf__requests-863: gold in top-20=True, largest gold file prompt=10137 tokens
+[157/300] pydata__xarray-3364: gold in top-20=True, largest gold file prompt=5630 tokens
+[158/300] pydata__xarray-4094: gold in top-20=True, largest gold file prompt=51734 tokens
+[159/300] pydata__xarray-4248: gold in top-20=True, largest gold file prompt=8627 tokens
+[160/300] pydata__xarray-4493: gold in top-20=True, largest gold file prompt=36668 tokens
+[161/300] pydata__xarray-5131: gold in top-20=True, largest gold file prompt=12668 tokens
+[162/300] pylint-dev__pylint-5859: gold in top-20=True, largest gold file prompt=3161 tokens
+[163/300] pylint-dev__pylint-6506: gold in top-20=True, largest gold file prompt=1821 tokens
+[164/300] pylint-dev__pylint-7080: gold in top-20=False, largest gold file prompt=2407 tokens
+[165/300] pylint-dev__pylint-7114: gold in top-20=False, largest gold file prompt=2420 tokens
+[166/300] pylint-dev__pylint-7228: gold in top-20=True, largest gold file prompt=5618 tokens
+[167/300] pylint-dev__pylint-7993: gold in top-20=True, largest gold file prompt=4327 tokens
+[168/300] pytest-dev__pytest-11143: gold in top-20=True, largest gold file prompt=15973 tokens
+[169/300] pytest-dev__pytest-11148: gold in top-20=False, largest gold file prompt=9850 tokens
+[170/300] pytest-dev__pytest-5103: gold in top-20=True, largest gold file prompt=14463 tokens
+[171/300] pytest-dev__pytest-5221: gold in top-20=True, largest gold file prompt=18925 tokens
+[172/300] pytest-dev__pytest-5227: gold in top-20=True, largest gold file prompt=7977 tokens
+[173/300] pytest-dev__pytest-5413: gold in top-20=False, largest gold file prompt=12446 tokens
+[174/300] pytest-dev__pytest-5495: gold in top-20=True, largest gold file prompt=5090 tokens
+[175/300] pytest-dev__pytest-5692: gold in top-20=True, largest gold file prompt=8414 tokens
+[176/300] pytest-dev__pytest-6116: gold in top-20=True, largest gold file prompt=8794 tokens
+[177/300] pytest-dev__pytest-7168: gold in top-20=False, largest gold file prompt=1743 tokens
+[178/300] pytest-dev__pytest-7220: gold in top-20=False, largest gold file prompt=7632 tokens
+[179/300] pytest-dev__pytest-7373: gold in top-20=False, largest gold file prompt=2024 tokens
+[180/300] pytest-dev__pytest-7432: gold in top-20=True, largest gold file prompt=4227 tokens
+[181/300] pytest-dev__pytest-7490: gold in top-20=False, largest gold file prompt=4226 tokens
+[182/300] pytest-dev__pytest-8365: gold in top-20=True, largest gold file prompt=3389 tokens
+[183/300] pytest-dev__pytest-8906: gold in top-20=True, largest gold file prompt=22237 tokens
+[184/300] pytest-dev__pytest-9359: gold in top-20=False, largest gold file prompt=3013 tokens
+[185/300] scikit-learn__scikit-learn-10297: gold in top-20=True, largest gold file prompt=19285 tokens
+[186/300] scikit-learn__scikit-learn-10508: gold in top-20=True, largest gold file prompt=10495 tokens
+[187/300] scikit-learn__scikit-learn-10949: gold in top-20=True, largest gold file prompt=12361 tokens
+[188/300] scikit-learn__scikit-learn-11040: gold in top-20=True, largest gold file prompt=10591 tokens
+[189/300] scikit-learn__scikit-learn-11281: gold in top-20=False, largest gold file prompt=6179 tokens
+[190/300] scikit-learn__scikit-learn-12471: gold in top-20=True, largest gold file prompt=11015 tokens
+[191/300] scikit-learn__scikit-learn-13142: gold in top-20=False, largest gold file prompt=6616 tokens
+[192/300] scikit-learn__scikit-learn-13241: gold in top-20=True, largest gold file prompt=4506 tokens
+[193/300] scikit-learn__scikit-learn-13439: gold in top-20=True, largest gold file prompt=11618 tokens
+[194/300] scikit-learn__scikit-learn-13496: gold in top-20=True, largest gold file prompt=6945 tokens
+[195/300] scikit-learn__scikit-learn-13497: gold in top-20=True, largest gold file prompt=6367 tokens
+[196/300] scikit-learn__scikit-learn-13584: gold in top-20=True, largest gold file prompt=6460 tokens
+[197/300] scikit-learn__scikit-learn-13779: gold in top-20=True, largest gold file prompt=6502 tokens
+[198/300] scikit-learn__scikit-learn-14087: gold in top-20=True, largest gold file prompt=33076 tokens
+[199/300] scikit-learn__scikit-learn-14092: gold in top-20=True, largest gold file prompt=6853 tokens
+[200/300] scikit-learn__scikit-learn-14894: gold in top-20=True, largest gold file prompt=12739 tokens
+[201/300] scikit-learn__scikit-learn-14983: gold in top-20=True, largest gold file prompt=29285 tokens
+[202/300] scikit-learn__scikit-learn-15512: gold in top-20=True, largest gold file prompt=5962 tokens
+[203/300] scikit-learn__scikit-learn-15535: gold in top-20=True, largest gold file prompt=13348 tokens
+[204/300] scikit-learn__scikit-learn-25500: gold in top-20=False, largest gold file prompt=6075 tokens
+[205/300] scikit-learn__scikit-learn-25570: gold in top-20=True, largest gold file prompt=14611 tokens
+[206/300] scikit-learn__scikit-learn-25638: gold in top-20=True, largest gold file prompt=7189 tokens
+[207/300] scikit-learn__scikit-learn-25747: gold in top-20=True, largest gold file prompt=3586 tokens
+[208/300] sphinx-doc__sphinx-10325: gold in top-20=True, largest gold file prompt=38975 tokens
+[209/300] sphinx-doc__sphinx-10451: gold in top-20=False, largest gold file prompt=2886 tokens
+[210/300] sphinx-doc__sphinx-11445: gold in top-20=True, largest gold file prompt=1794 tokens
+[211/300] sphinx-doc__sphinx-7686: gold in top-20=True, largest gold file prompt=7718 tokens
+[212/300] sphinx-doc__sphinx-7738: gold in top-20=True, largest gold file prompt=13634 tokens
+[213/300] sphinx-doc__sphinx-7975: gold in top-20=True, largest gold file prompt=2883 tokens
+[214/300] sphinx-doc__sphinx-8273: gold in top-20=True, largest gold file prompt=1921 tokens
+[215/300] sphinx-doc__sphinx-8282: gold in top-20=True, largest gold file prompt=30817 tokens
+[216/300] sphinx-doc__sphinx-8435: gold in top-20=True, largest gold file prompt=31610 tokens
+[217/300] sphinx-doc__sphinx-8474: gold in top-20=True, largest gold file prompt=15768 tokens
+[218/300] sphinx-doc__sphinx-8506: gold in top-20=True, largest gold file prompt=15781 tokens
+[219/300] sphinx-doc__sphinx-8595: gold in top-20=True, largest gold file prompt=35174 tokens
+[220/300] sphinx-doc__sphinx-8627: gold in top-20=False, largest gold file prompt=7055 tokens
+[221/300] sphinx-doc__sphinx-8713: gold in top-20=True, largest gold file prompt=16799 tokens
+[222/300] sphinx-doc__sphinx-8721: gold in top-20=True, largest gold file prompt=4291 tokens
+[223/300] sphinx-doc__sphinx-8801: gold in top-20=True, largest gold file prompt=4566 tokens
+[224/300] sympy__sympy-11400: gold in top-20=True, largest gold file prompt=5594 tokens
+[225/300] sympy__sympy-11870: gold in top-20=False, largest gold file prompt=37448 tokens
+[226/300] sympy__sympy-11897: gold in top-20=True, largest gold file prompt=31796 tokens
+[227/300] sympy__sympy-12171: gold in top-20=True, largest gold file prompt=2138 tokens
+[228/300] sympy__sympy-12236: gold in top-20=False, largest gold file prompt=2272 tokens
+[229/300] sympy__sympy-12419: gold in top-20=False, largest gold file prompt=6525 tokens
+[230/300] sympy__sympy-12454: gold in top-20=True, largest gold file prompt=72049 tokens
+[231/300] sympy__sympy-12481: gold in top-20=True, largest gold file prompt=36474 tokens
+[232/300] sympy__sympy-13031: gold in top-20=False, largest gold file prompt=16545 tokens
+[233/300] sympy__sympy-13043: gold in top-20=True, largest gold file prompt=10802 tokens
+[234/300] sympy__sympy-13146: gold in top-20=False, largest gold file prompt=6257 tokens
+[235/300] sympy__sympy-13177: gold in top-20=True, largest gold file prompt=2234 tokens
+[236/300] sympy__sympy-13437: gold in top-20=True, largest gold file prompt=22840 tokens
+[237/300] sympy__sympy-13471: gold in top-20=True, largest gold file prompt=49091 tokens
+[238/300] sympy__sympy-13480: gold in top-20=True, largest gold file prompt=17643 tokens
+[239/300] sympy__sympy-13647: gold in top-20=True, largest gold file prompt=28713 tokens
+[240/300] sympy__sympy-13773: gold in top-20=True, largest gold file prompt=28743 tokens
+[241/300] sympy__sympy-13895: gold in top-20=False, largest gold file prompt=48726 tokens
+[242/300] sympy__sympy-13915: gold in top-20=False, largest gold file prompt=22928 tokens
+[243/300] sympy__sympy-13971: gold in top-20=True, largest gold file prompt=32897 tokens
+[244/300] sympy__sympy-14024: gold in top-20=False, largest gold file prompt=48729 tokens
+[245/300] sympy__sympy-14308: gold in top-20=True, largest gold file prompt=32087 tokens
+[246/300] sympy__sympy-14317: gold in top-20=True, largest gold file prompt=34196 tokens
+[247/300] sympy__sympy-14396: gold in top-20=True, largest gold file prompt=8520 tokens
+[248/300] sympy__sympy-14774: gold in top-20=True, largest gold file prompt=34717 tokens
+[249/300] sympy__sympy-14817: gold in top-20=True, largest gold file prompt=32516 tokens
+[250/300] sympy__sympy-15011: gold in top-20=True, largest gold file prompt=12285 tokens
+[251/300] sympy__sympy-15308: gold in top-20=True, largest gold file prompt=36402 tokens
+[252/300] sympy__sympy-15345: gold in top-20=True, largest gold file prompt=2268 tokens
+[253/300] sympy__sympy-15346: gold in top-20=False, largest gold file prompt=17744 tokens
+[254/300] sympy__sympy-15609: gold in top-20=True, largest gold file prompt=36404 tokens
+[255/300] sympy__sympy-15678: gold in top-20=True, largest gold file prompt=8701 tokens
+[256/300] sympy__sympy-16106: gold in top-20=True, largest gold file prompt=16635 tokens
+[257/300] sympy__sympy-16281: gold in top-20=True, largest gold file prompt=34853 tokens
+[258/300] sympy__sympy-16503: gold in top-20=True, largest gold file prompt=35476 tokens
+[259/300] sympy__sympy-16792: gold in top-20=True, largest gold file prompt=28566 tokens
+[260/300] sympy__sympy-16988: gold in top-20=True, largest gold file prompt=24858 tokens
+[261/300] sympy__sympy-17022: gold in top-20=False, largest gold file prompt=10340 tokens
+[262/300] sympy__sympy-17139: gold in top-20=True, largest gold file prompt=30201 tokens
+[263/300] sympy__sympy-17630: gold in top-20=True, largest gold file prompt=14902 tokens
+[264/300] sympy__sympy-17655: gold in top-20=True, largest gold file prompt=15825 tokens
+[265/300] sympy__sympy-18057: gold in top-20=False, largest gold file prompt=53284 tokens
+[266/300] sympy__sympy-18087: gold in top-20=False, largest gold file prompt=20017 tokens
+[267/300] sympy__sympy-18189: gold in top-20=True, largest gold file prompt=48787 tokens
+[268/300] sympy__sympy-18199: gold in top-20=True, largest gold file prompt=16294 tokens
+[269/300] sympy__sympy-18532: gold in top-20=True, largest gold file prompt=26207 tokens
+[270/300] sympy__sympy-18621: gold in top-20=True, largest gold file prompt=7534 tokens
+[271/300] sympy__sympy-18698: gold in top-20=True, largest gold file prompt=87983 tokens
+[272/300] sympy__sympy-18835: gold in top-20=True, largest gold file prompt=35852 tokens
+[273/300] sympy__sympy-19007: gold in top-20=True, largest gold file prompt=7537 tokens
+[274/300] sympy__sympy-19254: gold in top-20=True, largest gold file prompt=17629 tokens
+[275/300] sympy__sympy-19487: gold in top-20=True, largest gold file prompt=15204 tokens
+[276/300] sympy__sympy-20049: gold in top-20=True, largest gold file prompt=7228 tokens
+[277/300] sympy__sympy-20154: gold in top-20=True, largest gold file prompt=36074 tokens
+[278/300] sympy__sympy-20212: gold in top-20=True, largest gold file prompt=24061 tokens
+[279/300] sympy__sympy-20322: gold in top-20=False, largest gold file prompt=26310 tokens
+[280/300] sympy__sympy-20442: gold in top-20=True, largest gold file prompt=3045 tokens
+[281/300] sympy__sympy-20590: gold in top-20=False, largest gold file prompt=1274 tokens
+[282/300] sympy__sympy-20639: gold in top-20=False, largest gold file prompt=38154 tokens
+[283/300] sympy__sympy-21055: gold in top-20=True, largest gold file prompt=5024 tokens
+[284/300] sympy__sympy-21171: gold in top-20=True, largest gold file prompt=45185 tokens
+[285/300] sympy__sympy-21379: gold in top-20=False, largest gold file prompt=3243 tokens
+[286/300] sympy__sympy-21612: gold in top-20=False, largest gold file prompt=12903 tokens
+[287/300] sympy__sympy-21614: gold in top-20=True, largest gold file prompt=45401 tokens
+[288/300] sympy__sympy-21627: gold in top-20=False, largest gold file prompt=17504 tokens
+[289/300] sympy__sympy-21847: gold in top-20=True, largest gold file prompt=8583 tokens
+[290/300] sympy__sympy-22005: gold in top-20=True, largest gold file prompt=5126 tokens
+[291/300] sympy__sympy-22714: gold in top-20=True, largest gold file prompt=16126 tokens
+[292/300] sympy__sympy-22840: gold in top-20=False, largest gold file prompt=11525 tokens
+[293/300] sympy__sympy-23117: gold in top-20=True, largest gold file prompt=7715 tokens
+[294/300] sympy__sympy-23191: gold in top-20=False, largest gold file prompt=40060 tokens
+[295/300] sympy__sympy-23262: gold in top-20=True, largest gold file prompt=19478 tokens
+[296/300] sympy__sympy-24066: gold in top-20=True, largest gold file prompt=2904 tokens
+[297/300] sympy__sympy-24102: gold in top-20=True, largest gold file prompt=14275 tokens
+[298/300] sympy__sympy-24152: gold in top-20=True, largest gold file prompt=5717 tokens
+[299/300] sympy__sympy-24213: gold in top-20=True, largest gold file prompt=2921 tokens
+[300/300] sympy__sympy-24909: gold in top-20=True, largest gold file prompt=3150 tokens
+{
+  "instances": 300,
+  "tokenizer": "Qwen/Qwen2.5-7B-Instruct",
+  "context_window": 32768,
+  "completion_reserve": 4096,
+  "prompt_budget": 28672,
+  "custodian_top_k": 20,
+  "recall": {
+    "top1": {
+      "all_gold_files_found_%": 38.0,
+      "any_gold_file_found_%": 38.0,
+      "mean_file_recall_%": 38.0
+    },
+    "top5": {
+      "all_gold_files_found_%": 64.0,
+      "any_gold_file_found_%": 64.0,
+      "mean_file_recall_%": 64.0
+    },
+    "top10": {
+      "all_gold_files_found_%": 70.3,
+      "any_gold_file_found_%": 70.3,
+      "mean_file_recall_%": 70.3
+    },
+    "top20": {
+      "all_gold_files_found_%": 77.7,
+      "any_gold_file_found_%": 77.7,
+      "mean_file_recall_%": 77.7
+    },
+    "top50": {
+      "all_gold_files_found_%": 89.0,
+      "any_gold_file_found_%": 89.0,
+      "mean_file_recall_%": 89.0
+    }
+  },
+  "context": {
+    "developer_prompt_largest_gold_file": {
+      "n": 300,
+      "median": 10238.5,
+      "p90": 35852,
+      "max": 116626,
+      "mean": 16014.4
+    },
+    "instances_where_a_gold_file_overflows_%": 21.7,
+    "instances_where_a_gold_file_overflows_16k_%": 46.3,
+    "custodian_prompt_per_file": {
+      "n": 6000,
+      "median": 6397.5,
+      "p90": 23043,
+      "max": 111528,
+      "mean": 10368.4
+    },
+    "custodian_files_overflowing_%": 6.5,
+    "custodian_input_tokens_per_instance": {
+      "n": 300,
+      "median": 190519.5,
+      "p90": 389682,
+      "max": 542381,
+      "mean": 207367.9
+    },
+    "issue_tokens": {
+      "n": 300,
+      "median": 271.0,
+      "p90": 874,
+      "max": 7721,
+      "mean": 456.5
+    }
+  },
+  "by_repo": {
+    "astropy/astropy": {
+      "instances": 6,
+      "all_gold_in_top20_%": 83.3,
+      "median_largest_gold_prompt": 9061.0
+    },
+    "django/django": {
+      "instances": 114,
+      "all_gold_in_top20_%": 78.1,
+      "median_largest_gold_prompt": 6893.0
+    },
+    "matplotlib/matplotlib": {
+      "instances": 23,
+      "all_gold_in_top20_%": 69.6,
+      "median_largest_gold_prompt": 22012
+    },
+    "mwaskom/seaborn": {
+      "instances": 4,
+      "all_gold_in_top20_%": 100.0,
+      "median_largest_gold_prompt": 16737.0
+    },
+    "pallets/flask": {
+      "instances": 3,
+      "all_gold_in_top20_%": 100.0,
+      "median_largest_gold_prompt": 7172
+    },
+    "psf/requests": {
+      "instances": 6,
+      "all_gold_in_top20_%": 100.0,
+      "median_largest_gold_prompt": 8712.5
+    },
+    "pydata/xarray": {
+      "instances": 5,
+      "all_gold_in_top20_%": 100.0,
+      "median_largest_gold_prompt": 12668
+    },
+    "pylint-dev/pylint": {
+      "instances": 6,
+      "all_gold_in_top20_%": 66.7,
+      "median_largest_gold_prompt": 2790.5
+    },
+    "pytest-dev/pytest": {
+      "instances": 17,
+      "all_gold_in_top20_%": 58.8,
+      "median_largest_gold_prompt": 7977
+    },
+    "scikit-learn/scikit-learn": {
+      "instances": 23,
+      "all_gold_in_top20_%": 87.0,
+      "median_largest_gold_prompt": 7189
+    },
+    "sphinx-doc/sphinx": {
+      "instances": 16,
+      "all_gold_in_top20_%": 87.5,
+      "median_largest_gold_prompt": 10676.0
+    },
+    "sympy/sympy": {
+      "instances": 77,
+      "all_gold_in_top20_%": 74.0,
+      "median_largest_gold_prompt": 17643
+    }
+  }
+}

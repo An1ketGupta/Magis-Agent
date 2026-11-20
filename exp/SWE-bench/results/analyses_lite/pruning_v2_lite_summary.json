@@ -1,0 +1,54 @@
+{
+  "dataset": "princeton-nlp/SWE-bench_Lite",
+  "exclude_lite": false,
+  "scorer": "named_first",
+  "files": 300,
+  "instances": 300,
+  "tokenizer": "Qwen/Qwen2.5-7B-Instruct",
+  "full_tokens": {
+    "median": 9638.5,
+    "mean": 15414
+  },
+  "budgets": {
+    "skeleton_only": {
+      "files_pruned_%": 100.0,
+      "edits_visible_all_files_%": 11.0,
+      "edits_visible_pruned_files_%": 11.0,
+      "instances_all_edits_visible_%": 11.0,
+      "total_tokens_vs_full_%": 29.3,
+      "median_tokens": 2887.0
+    },
+    "2000": {
+      "files_pruned_%": 88.7,
+      "edits_visible_all_files_%": 28.3,
+      "edits_visible_pruned_files_%": 19.2,
+      "instances_all_edits_visible_%": 28.3,
+      "total_tokens_vs_full_%": 31.0,
+      "median_tokens": 2887.0
+    },
+    "4000": {
+      "files_pruned_%": 76.0,
+      "edits_visible_all_files_%": 52.7,
+      "edits_visible_pruned_files_%": 37.7,
+      "instances_all_edits_visible_%": 52.7,
+      "total_tokens_vs_full_%": 35.4,
+      "median_tokens": 3978.0
+    },
+    "8000": {
+      "files_pruned_%": 53.7,
+      "edits_visible_all_files_%": 71.7,
+      "edits_visible_pruned_files_%": 47.2,
+      "instances_all_edits_visible_%": 71.7,
+      "total_tokens_vs_full_%": 45.0,
+      "median_tokens": 7909.5
+    },
+    "16000": {
+      "files_pruned_%": 37.3,
+      "edits_visible_all_files_%": 90.3,
+      "edits_visible_pruned_files_%": 74.1,
+      "instances_all_edits_visible_%": 90.3,
+      "total_tokens_vs_full_%": 63.6,
+      "median_tokens": 9638.5
+    }
+  }
+}

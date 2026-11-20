@@ -1,38 +1,43 @@
 # Status
 
-_Last updated: 2026-11-19_
+_Last updated: 2026-11-20_
 
 ## Where we are
-- **Step 0 done**, merged into `main`: MAGIS runs against any OpenAI-compatible LLM server (vLLM/Qwen), with
-  token logging, fixed `--oracle`/QA flags, recreated data files and harness-format predictions.
-- **Config B v1 built** (branch `config-b-langgraph`, not merged yet): LangGraph graph around the unchanged
-  MAGIS agents + reproduction test + routed feedback (`DESIGN_CONFIG_B.md`). Tested only with a mock LLM and
-  the local sandbox (`EXPERIMENTS.md` E1). The Docker sandbox has not run on a real SWE-bench image yet.
-- Two MAGIS bugs found by the tests: shared Developer folders (fixed, D7, affects A too) and truncation that
-  can cut the instructions (open decision, `CODEBASE_NOTES.md`).
-- **Direction chosen provisionally** (`DECISIONS.md` D3–D5): build the mid-review system, evaluate it with
-  budget-matched comparisons (Path B in `PLAN.md`). Waiting for supervisors' agreement.
-- **No real results exist yet.** The mid-sem 13.82% was never run.
+- **Step 0 and Config B v1 are on `main`.** Today's work is on branch `truncation-and-analyses` (not merged,
+  not pushed): middle truncation (D9), DockerRunner fix, skeleton pruning module (C2, D10), no-LLM analyses,
+  machine check script, review notes (`REVIEW_PREP.md`). 28 unit tests pass.
+- **Infrastructure verified on the laptop (E4):** the official harness resolves 5/5 gold patches on offline
+  repos (flask, pytest); Config B's DockerRunner + router behave as designed on a real SWE-bench image, after a
+  fix (it was testing the unpatched installed copy). requests instances fail even with gold (live-network
+  tests): expect some instances unresolvable in our environment.
+- **First numbers (no LLM, E2/E3):** BM25 top-20 file recall 77.7% on Lite; the file to fix overflows 32k in
+  21.7% of issues; the Custodian reads a median 190k tokens/issue; skeleton pruning v2 keeps all gold edits
+  visible in 71.7% of issues at 8k tokens (45% of the tokens), 90.3% at 16k.
+- **Still no resolution rate.** The mid-sem 13.82% was never run.
+- Review in ~4 days (from 2026-11-20); paper in ~2–3 months.
 
-## Next steps
-1. Get GPU access; check GPU/VRAM, disk (SWE-bench images need ~150–250 GB), Docker without sudo, vLLM.
-2. Validate the SWE-bench harness with gold patches on 5–10 Lite instances; run `DockerRunner` on one real image.
-3. Analyses that need no LLM: BM25 file recall on Lite; context-size distribution (how often 32k overflows).
-4. Smoke test: Config A on 10–20 Lite instances with Qwen; check "Nothing changed." and truncation counts,
-   then decide on the truncation question.
-5. Full Config A baseline on Lite (+ mini-SWE-agent reference A′); then Config B smoke test.
-6. Config B v2: regression tests in `verify`.
+## Next steps (GPU from 2026-11-21)
+1. Connect over Tailscale/SSH; run `bash exp/SWE-bench/check_machine.sh` on the GPU machine.
+2. vLLM + Qwen2.5-7B-Instruct; clone repos (`setup_repos.sh`), `prepare_dataset.py`, BM25 file
+   (copy of `exp/SWE-bench/results/analyses_lite/bm25_lite_top50.jsonl` can be used as `MAGIS_BM25_FILE`).
+3. Gold check of all 300 Lite instances with the harness (which are unresolvable even with gold).
+4. Config A smoke test (10–20 instances): check truncation counts, "Nothing changed.", ```` ```python ```` parsing.
+5. Config A and Config B on the same instances (as many as time allows before the review), scored with
+   `--dataset_name SWE-bench/SWE-bench_Lite`.
+6. Wire pruning into the Developer (C2), then D; Config B v2 (regression tests).
+
+## GPU machine (from the lab's spec sheet, 2026-11-20; verify with `check_machine.sh`)
+Tyrone Camarero TDI100C3R-212: 1× NVIDIA L4 24 GB, 2× Xeon Gold 6342 (48C/96T), 256 GB RAM,
+2× 3.84 TB + 2× 960 GB SATA SSD, OS listed as CentOS (`SETUP_GPU_ACCESS.md` assumed Windows: check). Shared
+with other students. Fits Qwen2.5-7B (bf16/FP8, 32k); a stronger second model only quantized (Coder-14B, or
+Qwen3-Coder-30B-A3B in 4-bit). Old CentOS 7 (glibc 2.17) would need vLLM in Docker.
 
 ## Waiting on the user
-- **Tailscale is not installed on the laptop**: install it (same account as the GPU) so Claude can reach the GPU.
-- The GPU's Tailscale hostname/IP and username. A dedicated key is ready on the laptop:
-  `~/.ssh/capstone_gpu` (no passphrase; public key `~/.ssh/capstone_gpu.pub` goes into the GPU account's
-  `~/.ssh/authorized_keys`).
-- Final-review and paper deadlines.
-- Supervisors' OK on Path B; the college's and target venue's rules on AI assistance.
-- Optional: API key for hosted Qwen (smoke test without the college GPU).
+- GPU access: Tailscale name/IP, username, and the OK to run long jobs on it.
+- Review format (slides/report/demo); supervisors' OK on Path B; AI-assistance rules.
+- OK to merge `truncation-and-analyses` into `main` and push to GitHub.
 
-## Loose ends
-- A clone of the SWE-bench repos into WSL `~/SWE-bench-repo` was stopped part-way (2026-11-19). Delete
-  `~/SWE-bench-repo` before re-running `setup_repos.sh` (it skips folders that exist), and check no
-  `git clone` is still running (`wsl -d Ubuntu -- pkill -f "git clone"`).
+## Laptop state
+- Cleaned 2026-11-20: SWE-bench images, repo clones and HF cache deleted; WSL and Docker disks compacted
+  (C: free 103.5 GB). Kept: `~/.magis-test-venv` (swebench 5.0.2, tokenizers), small logs in `~/runs`, `~/analyses`.
+- Docker Desktop's WSL integration for Ubuntu is now on.

@@ -74,10 +74,11 @@ MAGIS_RUN_DIR=~/runs/A_lite python process.py
 
 ## 4. Evaluate
 
-With the official harness (`pip install swebench`, needs Docker):
+With the official harness (`pip install swebench`, needs Docker). swebench ≥5 needs the `SWE-bench/...`
+datasets (they carry each instance's image and evaluation script); the `princeton-nlp/...` copies lack them:
 
 ```bash
-python -m swebench.harness.run_evaluation --dataset_name princeton-nlp/SWE-bench_Lite \
+python -m swebench.harness.run_evaluation --dataset_name SWE-bench/SWE-bench_Lite \
     --predictions_path ~/runs/A_lite/result/1_predictions.jsonl --max_workers 8 --run_id A_lite
 ```
 
