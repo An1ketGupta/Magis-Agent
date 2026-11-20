@@ -1,0 +1,352 @@
+Database path: /mnt/c/My_Folder/Sem 7/Capstone/Project/magis/sqlite_db/magis.db
+[1/300] astropy__astropy-12907
+[2/300] astropy__astropy-14182
+[3/300] astropy__astropy-14365
+[4/300] astropy__astropy-14995
+[5/300] astropy__astropy-6938
+[6/300] astropy__astropy-7746
+[7/300] django__django-10914
+[8/300] django__django-10924
+[9/300] django__django-11001
+[10/300] django__django-11019
+[11/300] django__django-11039
+[12/300] django__django-11049
+[13/300] django__django-11099
+[14/300] django__django-11133
+[15/300] django__django-11179
+[16/300] django__django-11283
+[17/300] django__django-11422
+[18/300] django__django-11564
+[19/300] django__django-11583
+[20/300] django__django-11620
+[21/300] django__django-11630
+[22/300] django__django-11742
+[23/300] django__django-11797
+[24/300] django__django-11815
+[25/300] django__django-11848
+[26/300] django__django-11905
+[27/300] django__django-11910
+[28/300] django__django-11964
+[29/300] django__django-11999
+[30/300] django__django-12113
+[31/300] django__django-12125
+[32/300] django__django-12184
+[33/300] django__django-12284
+[34/300] django__django-12286
+[35/300] django__django-12308
+[36/300] django__django-12453
+[37/300] django__django-12470
+[38/300] django__django-12497
+[39/300] django__django-12589
+[40/300] django__django-12700
+[41/300] django__django-12708
+[42/300] django__django-12747
+[43/300] django__django-12856
+[44/300] django__django-12908
+[45/300] django__django-12915
+[46/300] django__django-12983
+[47/300] django__django-13028
+[48/300] django__django-13033
+[49/300] django__django-13158
+[50/300] django__django-13220
+[51/300] django__django-13230
+[52/300] django__django-13265
+[53/300] django__django-13315
+[54/300] django__django-13321
+[55/300] django__django-13401
+[56/300] django__django-13447
+[57/300] django__django-13448
+[58/300] django__django-13551
+[59/300] django__django-13590
+[60/300] django__django-13658
+[61/300] django__django-13660
+[62/300] django__django-13710
+[63/300] django__django-13757
+[64/300] django__django-13768
+[65/300] django__django-13925
+[66/300] django__django-13933
+[67/300] django__django-13964
+[68/300] django__django-14016
+[69/300] django__django-14017
+[70/300] django__django-14155
+[71/300] django__django-14238
+[72/300] django__django-14382
+[73/300] django__django-14411
+[74/300] django__django-14534
+[75/300] django__django-14580
+[76/300] django__django-14608
+[77/300] django__django-14667
+[78/300] django__django-14672
+[79/300] django__django-14730
+[80/300] django__django-14752
+[81/300] django__django-14787
+[82/300] django__django-14855
+[83/300] django__django-14915
+[84/300] django__django-14997
+[85/300] django__django-14999
+[86/300] django__django-15061
+[87/300] django__django-15202
+[88/300] django__django-15213
+[89/300] django__django-15252
+[90/300] django__django-15320
+[91/300] django__django-15347
+[92/300] django__django-15388
+[93/300] django__django-15400
+[94/300] django__django-15498
+[95/300] django__django-15695
+[96/300] django__django-15738
+[97/300] django__django-15781
+[98/300] django__django-15789
+[99/300] django__django-15790
+[100/300] django__django-15814
+[101/300] django__django-15819
+[102/300] django__django-15851
+[103/300] django__django-15902
+[104/300] django__django-15996
+[105/300] django__django-16041
+[106/300] django__django-16046
+[107/300] django__django-16139
+[108/300] django__django-16229
+[109/300] django__django-16255
+[110/300] django__django-16379
+[111/300] django__django-16400
+[112/300] django__django-16408
+[113/300] django__django-16527
+[114/300] django__django-16595
+[115/300] django__django-16816
+[116/300] django__django-16820
+[117/300] django__django-16873
+[118/300] django__django-16910
+[119/300] django__django-17051
+[120/300] django__django-17087
+[121/300] matplotlib__matplotlib-18869
+[122/300] matplotlib__matplotlib-22711
+[123/300] matplotlib__matplotlib-22835
+[124/300] matplotlib__matplotlib-23299
+[125/300] matplotlib__matplotlib-23314
+[126/300] matplotlib__matplotlib-23476
+[127/300] matplotlib__matplotlib-23562
+[128/300] matplotlib__matplotlib-23563
+[129/300] matplotlib__matplotlib-23913
+[130/300] matplotlib__matplotlib-23964
+[131/300] matplotlib__matplotlib-23987
+[132/300] matplotlib__matplotlib-24149
+[133/300] matplotlib__matplotlib-24265
+[134/300] matplotlib__matplotlib-24334
+[135/300] matplotlib__matplotlib-24970
+[136/300] matplotlib__matplotlib-25079
+[137/300] matplotlib__matplotlib-25311
+[138/300] matplotlib__matplotlib-25332
+[139/300] matplotlib__matplotlib-25433
+[140/300] matplotlib__matplotlib-25442
+[141/300] matplotlib__matplotlib-25498
+[142/300] matplotlib__matplotlib-26011
+[143/300] matplotlib__matplotlib-26020
+[144/300] mwaskom__seaborn-2848
+[145/300] mwaskom__seaborn-3010
+[146/300] mwaskom__seaborn-3190
+[147/300] mwaskom__seaborn-3407
+[148/300] pallets__flask-4045
+[149/300] pallets__flask-4992
+[150/300] pallets__flask-5063
+[151/300] psf__requests-1963
+[152/300] psf__requests-2148
+[153/300] psf__requests-2317
+[154/300] psf__requests-2674
+[155/300] psf__requests-3362
+[156/300] psf__requests-863
+[157/300] pydata__xarray-3364
+[158/300] pydata__xarray-4094
+[159/300] pydata__xarray-4248
+[160/300] pydata__xarray-4493
+[161/300] pydata__xarray-5131
+[162/300] pylint-dev__pylint-5859
+[163/300] pylint-dev__pylint-6506
+[164/300] pylint-dev__pylint-7080
+[165/300] pylint-dev__pylint-7114
+[166/300] pylint-dev__pylint-7228
+[167/300] pylint-dev__pylint-7993
+[168/300] pytest-dev__pytest-11143
+[169/300] pytest-dev__pytest-11148
+[170/300] pytest-dev__pytest-5103
+[171/300] pytest-dev__pytest-5221
+[172/300] pytest-dev__pytest-5227
+[173/300] pytest-dev__pytest-5413
+[174/300] pytest-dev__pytest-5495
+[175/300] pytest-dev__pytest-5692
+[176/300] pytest-dev__pytest-6116
+[177/300] pytest-dev__pytest-7168
+[178/300] pytest-dev__pytest-7220
+[179/300] pytest-dev__pytest-7373
+[180/300] pytest-dev__pytest-7432
+[181/300] pytest-dev__pytest-7490
+[182/300] pytest-dev__pytest-8365
+[183/300] pytest-dev__pytest-8906
+[184/300] pytest-dev__pytest-9359
+[185/300] scikit-learn__scikit-learn-10297
+[186/300] scikit-learn__scikit-learn-10508
+[187/300] scikit-learn__scikit-learn-10949
+[188/300] scikit-learn__scikit-learn-11040
+[189/300] scikit-learn__scikit-learn-11281
+[190/300] scikit-learn__scikit-learn-12471
+[191/300] scikit-learn__scikit-learn-13142
+[192/300] scikit-learn__scikit-learn-13241
+[193/300] scikit-learn__scikit-learn-13439
+[194/300] scikit-learn__scikit-learn-13496
+[195/300] scikit-learn__scikit-learn-13497
+[196/300] scikit-learn__scikit-learn-13584
+[197/300] scikit-learn__scikit-learn-13779
+[198/300] scikit-learn__scikit-learn-14087
+[199/300] scikit-learn__scikit-learn-14092
+[200/300] scikit-learn__scikit-learn-14894
+[201/300] scikit-learn__scikit-learn-14983
+[202/300] scikit-learn__scikit-learn-15512
+[203/300] scikit-learn__scikit-learn-15535
+[204/300] scikit-learn__scikit-learn-25500
+[205/300] scikit-learn__scikit-learn-25570
+[206/300] scikit-learn__scikit-learn-25638
+[207/300] scikit-learn__scikit-learn-25747
+[208/300] sphinx-doc__sphinx-10325
+[209/300] sphinx-doc__sphinx-10451
+[210/300] sphinx-doc__sphinx-11445
+[211/300] sphinx-doc__sphinx-7686
+[212/300] sphinx-doc__sphinx-7738
+[213/300] sphinx-doc__sphinx-7975
+[214/300] sphinx-doc__sphinx-8273
+[215/300] sphinx-doc__sphinx-8282
+[216/300] sphinx-doc__sphinx-8435
+[217/300] sphinx-doc__sphinx-8474
+[218/300] sphinx-doc__sphinx-8506
+[219/300] sphinx-doc__sphinx-8595
+[220/300] sphinx-doc__sphinx-8627
+[221/300] sphinx-doc__sphinx-8713
+[222/300] sphinx-doc__sphinx-8721
+[223/300] sphinx-doc__sphinx-8801
+[224/300] sympy__sympy-11400
+[225/300] sympy__sympy-11870
+[226/300] sympy__sympy-11897
+[227/300] sympy__sympy-12171
+[228/300] sympy__sympy-12236
+[229/300] sympy__sympy-12419
+[230/300] sympy__sympy-12454
+[231/300] sympy__sympy-12481
+[232/300] sympy__sympy-13031
+[233/300] sympy__sympy-13043
+[234/300] sympy__sympy-13146
+[235/300] sympy__sympy-13177
+[236/300] sympy__sympy-13437
+[237/300] sympy__sympy-13471
+[238/300] sympy__sympy-13480
+[239/300] sympy__sympy-13647
+[240/300] sympy__sympy-13773
+[241/300] sympy__sympy-13895
+[242/300] sympy__sympy-13915
+[243/300] sympy__sympy-13971
+[244/300] sympy__sympy-14024
+[245/300] sympy__sympy-14308
+[246/300] sympy__sympy-14317
+[247/300] sympy__sympy-14396
+[248/300] sympy__sympy-14774
+[249/300] sympy__sympy-14817
+[250/300] sympy__sympy-15011
+[251/300] sympy__sympy-15308
+[252/300] sympy__sympy-15345
+[253/300] sympy__sympy-15346
+[254/300] sympy__sympy-15609
+[255/300] sympy__sympy-15678
+[256/300] sympy__sympy-16106
+[257/300] sympy__sympy-16281
+[258/300] sympy__sympy-16503
+[259/300] sympy__sympy-16792
+[260/300] sympy__sympy-16988
+[261/300] sympy__sympy-17022
+[262/300] sympy__sympy-17139
+[263/300] sympy__sympy-17630
+[264/300] sympy__sympy-17655
+[265/300] sympy__sympy-18057
+[266/300] sympy__sympy-18087
+[267/300] sympy__sympy-18189
+[268/300] sympy__sympy-18199
+[269/300] sympy__sympy-18532
+[270/300] sympy__sympy-18621
+[271/300] sympy__sympy-18698
+[272/300] sympy__sympy-18835
+[273/300] sympy__sympy-19007
+[274/300] sympy__sympy-19254
+[275/300] sympy__sympy-19487
+[276/300] sympy__sympy-20049
+[277/300] sympy__sympy-20154
+[278/300] sympy__sympy-20212
+[279/300] sympy__sympy-20322
+[280/300] sympy__sympy-20442
+[281/300] sympy__sympy-20590
+[282/300] sympy__sympy-20639
+[283/300] sympy__sympy-21055
+[284/300] sympy__sympy-21171
+[285/300] sympy__sympy-21379
+[286/300] sympy__sympy-21612
+[287/300] sympy__sympy-21614
+[288/300] sympy__sympy-21627
+[289/300] sympy__sympy-21847
+[290/300] sympy__sympy-22005
+[291/300] sympy__sympy-22714
+[292/300] sympy__sympy-22840
+[293/300] sympy__sympy-23117
+[294/300] sympy__sympy-23191
+[295/300] sympy__sympy-23262
+[296/300] sympy__sympy-24066
+[297/300] sympy__sympy-24102
+[298/300] sympy__sympy-24152
+[299/300] sympy__sympy-24213
+[300/300] sympy__sympy-24909
+{
+  "files": 300,
+  "instances": 300,
+  "tokenizer": "Qwen/Qwen2.5-7B-Instruct",
+  "full_tokens": {
+    "median": 9638.5,
+    "mean": 15414
+  },
+  "budgets": {
+    "skeleton_only": {
+      "files_pruned_%": 100.0,
+      "edits_visible_all_files_%": 12.0,
+      "edits_visible_pruned_files_%": 12.0,
+      "instances_all_edits_visible_%": 12.0,
+      "total_tokens_vs_full_%": 50.6,
+      "median_tokens": 4764.0
+    },
+    "2000": {
+      "files_pruned_%": 88.7,
+      "edits_visible_all_files_%": 23.7,
+      "edits_visible_pruned_files_%": 13.9,
+      "instances_all_edits_visible_%": 23.7,
+      "total_tokens_vs_full_%": 51.4,
+      "median_tokens": 4764.0
+    },
+    "4000": {
+      "files_pruned_%": 76.0,
+      "edits_visible_all_files_%": 44.0,
+      "edits_visible_pruned_files_%": 26.3,
+      "instances_all_edits_visible_%": 44.0,
+      "total_tokens_vs_full_%": 53.7,
+      "median_tokens": 4764.0
+    },
+    "8000": {
+      "files_pruned_%": 53.7,
+      "edits_visible_all_files_%": 65.7,
+      "edits_visible_pruned_files_%": 36.0,
+      "instances_all_edits_visible_%": 65.7,
+      "total_tokens_vs_full_%": 59.7,
+      "median_tokens": 7946.0
+    },
+    "16000": {
+      "files_pruned_%": 37.3,
+      "edits_visible_all_files_%": 83.3,
+      "edits_visible_pruned_files_%": 55.4,
+      "instances_all_edits_visible_%": 83.3,
+      "total_tokens_vs_full_%": 71.5,
+      "median_tokens": 9638.5
+    }
+  }
+}
