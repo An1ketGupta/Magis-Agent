@@ -83,3 +83,24 @@ Template:
 - Notes: of the files that actually get pruned at 8k, only 47.2% keep the edit visible: the lexical scorer is
   the weak part (the motivation for a learned scorer such as SWE-Pruner, and for expand-on-failure in D).
   Visibility is necessary, not sufficient, for a fix; resolution needs LLM runs.
+
+### E4 (2026-11-20): Harness check with gold patches; Config B's DockerRunner on a real image
+- Purpose: check the scoring pipeline and Config B's sandbox before any LLM run. **Not a performance result.**
+- Commit / branch: `truncation-and-analyses` (sandbox fix committed after this run, see Notes)
+- Machine: laptop, WSL Ubuntu + Docker Desktop 29.5.2; swebench 5.0.2 in `~/.magis-test-venv`
+- Harness (`--predictions_path gold`, `SWE-bench/SWE-bench_Lite`, 3 workers, run dir `~/runs/harness_gold_check`):
+  - run_id `gold_check_offline`: flask-4045, flask-4992, flask-5063, pytest-11143, pytest-11148 → **5/5 resolved** (2.1 min).
+  - run_id `gold_check_requests`: the 6 psf/requests instances → 1/6 resolved, 0 errors, all patches applied.
+    Every failing test contacts live websites: SSL `CERTIFICATE_VERIFY_FAILED` (old requests ships old CA
+    certificates) and httpbin redirect tests. Environment, not the patches: requests instances can fail even
+    with the gold patch on our machines. Run a gold check of all 300 on the GPU machine and report which
+    instances are unresolvable with gold.
+  - swebench 5 needs `SWE-bench/SWE-bench_Lite` (has `image`, `eval_script`, `log_parser`); `princeton-nlp/...`
+    fails with `KeyError: 'image'`. The two have identical base commits and issue texts for all 300; one instance
+    has updated test lists in the newer one. Score with `SWE-bench/SWE-bench_Lite`.
+- DockerRunner (`swebench/sweb.eval.x86_64.psf_1776_requests-2317`, hand-written reproduction script,
+  infrastructure test only): first attempt **found a bug**: the image installs requests as a plain copy in
+  site-packages, so the script imported the unpatched copy and even the gold patch looked like a failure. Fixed
+  (`PYTHONPATH=/testbed`, or `/testbed/src:/testbed`). After the fix: no patch → "Issue reproduced", route develop
+  (empty patch); gold → "Issue resolved", route end; crashing patch → `NameError` traced to
+  `requests/sessions.py`, route develop; non-applying patch → apply_ok False, route develop. All as designed.
