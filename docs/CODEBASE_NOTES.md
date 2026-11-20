@@ -15,11 +15,10 @@
 5. `merge_code_change` concatenates per-member patches → `<version>_predictions.jsonl`.
 
 ## Quirks to watch (not changed, behavior-relevant)
-- **Truncation can cut the instructions (open decision).** MAGIS prompts put the code first and the `# TODO`
-  instructions last; our truncation (like MAGIS's for gpt-4-1106) keeps the head, so on files larger than the
-  context the instructions are lost, the answer cannot be parsed and the edit fails ("Nothing changed.").
-  Seen in the Config B mock test with a large file. Options: truncate the code part instead of the end, or
-  keep it and report it. Check how often it happens (`truncated` in the token log) in the smoke test.
+- **Truncation (decided, D9).** MAGIS prompts put the code first and the `# TODO` instructions last; keeping
+  the head (MAGIS's gpt-4-1106 strategy) lost the instructions on large files. We now cut the middle
+  (`MAGIS_TRUNCATION=middle`, default); `head` is still available. 21.7% of Lite issues have a file to fix
+  that overflows 32k (E2), so count `truncated` in the token log of every run.
 - Code-block parsing splits on `` ```Python `` exactly (capital P, the Pygments lexer name). If the model writes
   `` ```python ``, the edit silently fails and the log says `Nothing changed.` Count these in the smoke test.
 - Editing from line 1 inserts a blank first line (`before_modify_code` is empty). Patches still apply.
@@ -44,3 +43,14 @@
   made outside the agent modules. Config B lives in `repair/` + `run_repair.py` (see `DESIGN_CONFIG_B.md`).
 - BM25 is our recreation (`rank_bm25`, path + content of `.py` files at base commit, identifier-split tokens),
   not SWE-bench's Pyserini index; report it as such.
+
+## Changed on 2026-11-20 (branch `truncation-and-analyses`)
+- `chat_with_LLM.py`/`config.py`: middle truncation (D9).
+- `repair/sandbox.py`: DockerRunner sets `PYTHONPATH=/testbed` (or `/testbed/src:/testbed`). Some SWE-bench
+  images install the repo as a plain copy in site-packages (requests), so scripts ran the unpatched copy (E4).
+- `repair/pruning.py`: skeleton pruning for C2/D (D10), not yet wired into the Developer. Wiring notes:
+  a Developer's chosen line range must not cover folded lines (expand those blocks first), and
+  `PrunedView.expand_lines` takes traceback line numbers for expand-on-failure.
+- Scoring: swebench 5 needs `--dataset_name SWE-bench/SWE-bench_Lite`; `princeton-nlp/...` lacks the image
+  and eval-script fields. The agents' task file (from `princeton-nlp`) has identical base commits and issues.
+- `.gitignore`: JSON results under `exp/SWE-bench/results/` are kept (MAGIS ignores all `*.json`).
