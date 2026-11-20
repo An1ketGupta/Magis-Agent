@@ -13,8 +13,9 @@ instead of whole ones, and we ask where a fixed token budget is best spent.
 |---|---|---|
 | MAGIS on any OpenAI-compatible server (vLLM), token logging, fixed `--oracle`, harness-format output | `chat_with_LLM.py`, `exp.py`, `token_usage.py` | done, mock-tested (E0) |
 | Data pipeline: Lite/Verified without gold patch and tests, BM25 recreation | `exp/SWE-bench/prepare_dataset.py`, `bm25_retrieval.py` | done |
-| Config B: LangGraph graph, reproduction test, Docker sandbox, deterministic router | `repair/`, `run_repair.py` | done, mock-tested (E1); Docker test pending |
-| Two MAGIS bugs fixed: shared Developer folders (D7), truncation losing instructions (D9) | `member.py`, `chat_with_LLM.py` | done, unit-tested |
+| Config B: LangGraph graph, reproduction test, Docker sandbox, deterministic router | `repair/`, `run_repair.py` | done, mock-tested (E1); sandbox + router verified on a real SWE-bench image (E4) |
+| Scoring pipeline: official SWE-bench harness | swebench 5.0.2 | verified: gold patches 5/5 resolved on offline repos (E4) |
+| Bugs fixed: shared Developer folders (D7), truncation losing instructions (D9), sandbox testing the unpatched installed copy (E4) | `member.py`, `chat_with_LLM.py`, `repair/sandbox.py` | done, tested |
 | C2: skeleton pruning with expand-on-failure | `repair/pruning.py` | built, measured without LLM (E3); not wired into the agents yet |
 | Analyses: retrieval recall, context overflow, pruning visibility | `exp/SWE-bench/analyze_*.py` | done (E2, E3) |
 | Unit tests | `tests/` | 28 passing |
