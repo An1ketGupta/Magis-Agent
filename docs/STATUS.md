@@ -26,8 +26,14 @@ _Last updated: 2026-11-20_
    `--dataset_name SWE-bench/SWE-bench_Lite`.
 6. Wire pruning into the Developer (C2), then D; Config B v2 (regression tests).
 
+## GPU machine (from the lab's spec sheet, 2026-11-20; verify with `check_machine.sh`)
+Tyrone Camarero TDI100C3R-212: 1× NVIDIA L4 24 GB, 2× Xeon Gold 6342 (48C/96T), 256 GB RAM,
+2× 3.84 TB + 2× 960 GB SATA SSD, OS listed as CentOS (`SETUP_GPU_ACCESS.md` assumed Windows: check). Shared
+with other students. Fits Qwen2.5-7B (bf16/FP8, 32k); a stronger second model only quantized (Coder-14B, or
+Qwen3-Coder-30B-A3B in 4-bit). Old CentOS 7 (glibc 2.17) would need vLLM in Docker.
+
 ## Waiting on the user
-- GPU machine details (Tailscale name/IP, username, GPU model/VRAM) and the OK to run long jobs on it.
+- GPU access: Tailscale name/IP, username, and the OK to run long jobs on it.
 - Review format (slides/report/demo); supervisors' OK on Path B; AI-assistance rules.
 - OK to merge `truncation-and-analyses` into `main` and push to GitHub.
 
